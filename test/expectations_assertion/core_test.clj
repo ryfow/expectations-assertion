@@ -1,4 +1,8 @@
 (ns expectations-assertion.core-test
-  (:use expectations))
+  (:use expectations)
+  (:use expectations-assertion.core))
 
-(expect nil (assert nil))
+(expect "Hello, Ryan" (binding [*name* "Ryan"] (say-hello)))
+
+(expect "Hello, Ryan" (say-hello))
+

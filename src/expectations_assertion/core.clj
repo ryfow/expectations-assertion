@@ -1,6 +1,9 @@
 (ns expectations-assertion.core)
 
-(defn foo
+(def ^:dynamic *name* nil)
+
+(defn say-hello
   "I don't do a whole lot."
-  [x]
-  (println x "Hello, World!"))
+  []
+  (assert *name* "*name* needs to be bound.")
+  (str "Hello, " *name*))
